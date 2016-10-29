@@ -1,0 +1,81 @@
+set number
+set relativenumber " use relative line numbers
+set showcmd        " feedback showing <leader> key is pressed
+set encoding=utf-8
+set nocompatible   " disable vi compatibility as required by vundle
+set laststatus=2
+set background=dark
+set t_Co=256
+set cursorline
+set tabstop=2 softtabstop=2 shiftwidth=2
+set expandtab autoindent smarttab
+
+let g:solarized_termcolors=256
+let mapleader = "," " map <Leader> to , 
+
+syntax enable
+
+" Vundle config
+set rtp+=~/.vim/bundle/vundle/
+filetype off
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'wincent/command-t'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+call vundle#end()
+filetype plugin indent on
+
+colorscheme solarized
+
+" NERDTree
+nnoremap <silent> <c-d> :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeFind<cr>
+
+" Command-T
+nnoremap <silent> <c-p> :CommandT<cr>
+
+"" Nop arrow keys
+noremap <up> <nop>
+noremap <right> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+inoremap <up> <nop>
+inoremap <right> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+
+"" Splits
+" nnoremap <c-h> <c-w><c-h>
+" nnoremap <c-j> <c-w><c-j>
+" nnoremap <c-k> <c-w><c-k>
+" nnoremap <c-l> <c-w><c-l>
+
+" airline
+let g:airline_powerline_fonts=1
+let g:airline_section_z=airline#section#create_right(["l/%L"])
+let g:airline_theme="badwolf"
+
+vmap <C-x> :!pbcopy<CR>  
+vmap <C-c> :w !pbcopy<CR><CR>
+
+" Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+nnoremap <leader>sc :SyntasticCheck<cr>
+let g:syntastic_javascript_checkers = ["jshint", "eslint", "jsxhint"]
+
+" Search
+:set hlsearch
+:set incsearch
