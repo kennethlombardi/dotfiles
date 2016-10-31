@@ -1,3 +1,6 @@
+" :set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" :set list
+
 set number
 set relativenumber " use relative line numbers
 set showcmd        " feedback showing <leader> key is pressed
