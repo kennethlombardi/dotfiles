@@ -28,19 +28,20 @@ let mapleader = "," " map <Leader> to ,
 syntax enable
 
 " Vundle config
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/bundle')
 filetype off
 call vundle#begin()
-Plugin 'gmarik/vundle'
-Plugin 'wincent/command-t'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()
+Plug 'junegunn/fzf', { 'dir': '~/.vim/bundle/fzf', 'do': './install --all' }
+Plug 'gmarik/vundle'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree.git'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 filetype plugin indent on
 
 colorscheme solarized
@@ -49,8 +50,8 @@ colorscheme solarized
 nnoremap <silent> <c-d> :NERDTreeToggle<cr>
 nnoremap <leader>t :NERDTreeFind<cr>
 
-" Command-T
-nnoremap <silent> <c-p> :CommandT<cr>
+" FZF 
+nnoremap <silent> <c-p> :FZF<cr>
 
 "" Nop arrow keys
 noremap <up> <nop>
