@@ -1,6 +1,8 @@
+" defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+" export PHANTOMJS_BIN=/path/to/node_modules/karma-phantomjs-launcher/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
 " :set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " :set list
-" autocmd Filetype html setlocal ts=2 sts=2 sw=2
+" autocmd Filetype html setlocal ts=6 sts=2 sw=2
 " autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 " autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
@@ -26,7 +28,7 @@ let mapleader = "," " map <Leader> to ,
 syntax enable
 
 " Vundle config
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
 Plugin 'gmarik/vundle'
