@@ -1,14 +1,10 @@
 " defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
 " export PHANTOMJS_BIN=/path/to/node_modules/karma-phantomjs-launcher/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
-" :set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-" :set list
+
+
 " autocmd Filetype html setlocal ts=6 sts=2 sw=2
 " autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 " autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
-
-" autocmd Filetype html setlocal ts=2 sw=2 expandtab
-" autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-" autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
 
 set number
 set relativenumber " use relative line numbers
@@ -21,6 +17,7 @@ set t_Co=256
 set cursorline
 set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab autoindent smarttab
+set backspace=indent,eol,start " allow backspace when no text entered in insert session
 
 let g:solarized_termcolors=256
 let mapleader = "," " map <Leader> to , 
@@ -28,19 +25,19 @@ let mapleader = "," " map <Leader> to ,
 syntax enable
 
 " Vundle config
-" set rtp+=~/.vim/bundle/Vundle.vim
-call plug#begin('~/.vim/bundle')
 filetype off
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 Plug 'junegunn/fzf', { 'dir': '~/.vim/bundle/fzf', 'do': './install --all' }
 Plug 'gmarik/vundle'
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree.git'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/localvimrc'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.eruby'] }
 call plug#end()
 filetype plugin indent on
 
@@ -63,12 +60,6 @@ inoremap <right> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 
-"" Splits
-" nnoremap <c-h> <c-w><c-h>
-" nnoremap <c-j> <c-w><c-j>
-" nnoremap <c-k> <c-w><c-k>
-" nnoremap <c-l> <c-w><c-l>
-
 " airline
 let g:airline_powerline_fonts=1
 let g:airline_section_z=airline#section#create_right(["l/%L"])
@@ -78,10 +69,6 @@ vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -92,3 +79,12 @@ let g:syntastic_javascript_checkers = ["jshint", "eslint", "jsxhint"]
 " Search
 :set hlsearch
 :set incsearch
+
+" Whitespace
+
+"" List chars
+set listchars=""
+set listchars=tab:>>
+set listchars+=trail:-
+set listchars+=extends:>
+set list

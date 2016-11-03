@@ -13,7 +13,7 @@ def each_system_file(system_dir)
 
   Dir.glob("#{system_dir}/**/**") do |systemfile|
     next unless File.file?(systemfile) || File.symlink?(systemfile)
-    
+
     relative_file = without_directory(systemfile, system_dir)
     dotfile = home_path(dotify(relative_file))
     systemfile = expanded_path(systemfile)
