@@ -89,3 +89,7 @@ set listchars=tab:>>
 set listchars+=trail:-
 set listchars+=extends:>
 set list
+
+" Fugitive
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>ga :Gwrite<cr>
