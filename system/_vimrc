@@ -37,7 +37,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/localvimrc'
-" Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.eruby'] }
 call plug#end()
 filetype plugin indent on
@@ -62,7 +62,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 
 "" delimitMate
-imap <C-c> <CR><Esc>O
+imap <C-c> <Esc>O
 
 " airline
 let g:airline_powerline_fonts=1
