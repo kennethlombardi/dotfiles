@@ -37,6 +37,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/localvimrc'
+" Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.eruby'] }
 call plug#end()
 filetype plugin indent on
@@ -60,6 +61,9 @@ inoremap <right> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 
+"" delimitMate
+imap <C-c> <CR><Esc>O
+
 " airline
 let g:airline_powerline_fonts=1
 let g:airline_section_z=airline#section#create_right(["l/%L"])
@@ -75,6 +79,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 nnoremap <leader>sc :SyntasticCheck<cr>
 let g:syntastic_javascript_checkers = ["jshint", "eslint", "jsxhint"]
+let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
 
 " Search
 :set hlsearch
