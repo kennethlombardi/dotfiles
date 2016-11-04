@@ -1,11 +1,6 @@
 " defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
 " export PHANTOMJS_BIN=/path/to/node_modules/karma-phantomjs-launcher/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
 
-
-" autocmd Filetype html setlocal ts=6 sts=2 sw=2
-" autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-" autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
-
 set number
 set relativenumber " use relative line numbers
 set showcmd        " feedback showing <leader> key is pressed
@@ -73,11 +68,12 @@ vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " Syntastic
+nnoremap <leader>sc :SyntasticCheck<cr>
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-nnoremap <leader>sc :SyntasticCheck<cr>
 let g:syntastic_javascript_checkers = ["jshint", "eslint", "jsxhint"]
 let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
 

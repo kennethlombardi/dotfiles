@@ -2,8 +2,8 @@
   editor = vim
   excludesfile = ~/.gitignore
 [user]
-	name = Kenneth Lombardi
-  email = kenneth.lombardi@shopify.com
+  name = Kenneth Lombardi
+  email = kenl@l4digital.com
 [push]
   default = simple
 [pull]
