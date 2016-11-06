@@ -14,8 +14,8 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab autoindent smarttab
 set backspace=indent,eol,start " allow backspace when no text entered in insert session
 set wildmenu
-
 syntax enable
+set scrolloff=5
 
 let g:solarized_termcolors=256
 let mapleader = "," " map <Leader> to , 
