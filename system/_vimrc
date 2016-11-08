@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/localvimrc'
 Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.eruby'] }
+Plug 'roman/golden-ratio'
 call plug#end()
 filetype plugin indent on
 
@@ -97,3 +98,5 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gst :Gstatus<cr>
 nnoremap <leader>gup :Gpull<space>--rebase<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gp :Gpush<cr>
