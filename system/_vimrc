@@ -20,7 +20,6 @@ set scrolloff=5
 let g:solarized_termcolors=256
 let mapleader = "," " map <Leader> to , 
 
-
 " Vundle config
 filetype off
 call plug#begin('~/.vim/bundle')
