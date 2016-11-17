@@ -38,6 +38,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.eruby'] }
 Plug 'jelera/vim-javascript-syntax'
 Plug 'roman/golden-ratio'
 Plug 'junegunn/vim-easy-align'
+Plug 'roman/golden-ratio'
 call plug#end()
 filetype plugin indent on
 
