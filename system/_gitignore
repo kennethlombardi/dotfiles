@@ -2,4 +2,6 @@
 .DS_Store?
 .Trashes
 ._*
-.lvimrc
+*.lvimrc
+*.orig
+
