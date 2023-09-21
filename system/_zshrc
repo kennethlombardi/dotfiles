@@ -9,15 +9,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm docker docker-compose)
+plugins=(git nvm docker docker-compose fzf)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-RUBIES+=(
-    /usr/local/bin/ruby
- )
 
 alias be="bundle exec"
 alias vim="stty stop '' -ixoff; vim"
@@ -30,6 +24,7 @@ export PATH=$PATH:$GOPATH/bin
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='find .'
+export FZF_BASE=/opt/homebrew/bin/fzf
 
 # NPM (N)
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
@@ -39,3 +34,7 @@ if [ -f '/Users/ken/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ken/google-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ken/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ken/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
