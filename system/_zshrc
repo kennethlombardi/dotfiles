@@ -13,6 +13,8 @@ plugins=(git nvm docker docker-compose fzf)
 
 source $ZSH/oh-my-zsh.sh
 
+zstyle ':completion:*' file-list all
+
 alias be="bundle exec"
 alias vim="stty stop '' -ixoff; vim"
 alias dcu="echo -e '\U0001f987'; docker-compose up"
@@ -38,3 +40,12 @@ if [ -f '/Users/ken/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ken/g
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Python
+export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+
+# Rust
+# export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
+
+
