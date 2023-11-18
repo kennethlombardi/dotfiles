@@ -16,7 +16,7 @@ const eachSystemFile = (systemDir, callback) => {
     const fullPath = path.join(systemDir, entry.name);
     if (entry.isFile() || fs.lstatSync(fullPath).isSymbolicLink()) {
       const relativeFile = withoutDirectory(fullPath, systemDir);
-      const dotFile = homePath(dotify(relativeFile));
+      const dotFile = homePath(replaceUnderscoreWithDot(relativeFile));
       const systemFile = path.resolve(fullPath);
       callback(dotFile, systemFile);
     }
@@ -27,7 +27,7 @@ const withoutDirectory = (file, dir) => {
   return file.replace(dir + path.sep, "");
 };
 
-const dotify = (pathString) => {
+const replaceUnderscoreWithDot = (pathString) => {
   return path.join(
     ...pathString.split(path.sep).map((s) => s.replace(/^_/, "."))
   );
