@@ -23,16 +23,16 @@
     "command": "workbench.action.nextEditor",
     "when": "!terminalFocus"
   },
-  {
-    "key": "tab",
-    "command": "workbench.action.nextEditor",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "workbench.action.previousEditor",
-    "when": "!terminalFocus"
-  },
+  // {
+  //   "key": "tab",
+  //   "command": "workbench.action.nextEditor",
+  //   "when": "!terminalFocus"
+  // },
+  // {
+  //   "key": "shift+tab",
+  //   "command": "workbench.action.previousEditor",
+  //   "when": "!terminalFocus"
+  // },
   {
     "key": "ctrl+h",
     "command": "workbench.action.terminal.focusPreviousPane",
@@ -187,7 +187,7 @@
   {
     "key": "shift+ctrl+e",
     "command": "-workbench.view.explorer"
-  },
+  }
   // {
   //   "key": "r",
   //   "command": "renameFile",
@@ -224,31 +224,31 @@
   //   "when": "inQuickOpen"
   // },
   /// Tab
-  {
-    "key": "tab",
-    "command": "selectNextSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "tab",
-    "command": "workbench.action.quickOpenNavigateNext",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "shift+tab",
-    "command": "selectPrevSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "shift+tab",
-    "command": "selectPrevSuggestion",
-    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-  },
-  {
-    "key": "shift+tab",
-    "command": "workbench.action.quickOpenNavigatePrevious",
-    "when": "inQuickOpen"
-  }
+  // {
+  //   "key": "tab",
+  //   "command": "selectNextSuggestion",
+  //   "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "workbench.action.quickOpenNavigateNext",
+  //   "when": "inQuickOpen"
+  // },
+  // {
+  //   "key": "shift+tab",
+  //   "command": "selectPrevSuggestion",
+  //   "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  // },
+  // {
+  //   "key": "shift+tab",
+  //   "command": "selectPrevSuggestion",
+  //   "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  // },
+  // {
+  //   "key": "shift+tab",
+  //   "command": "workbench.action.quickOpenNavigatePrevious",
+  //   "when": "inQuickOpen"
+  // }
   // {
   //   "key": "ctrl+k",
   //   "command": "workbench.action.quickOpenNavigatePrevious",

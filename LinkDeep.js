@@ -2,12 +2,24 @@ const fs = require("fs");
 const path = require("path");
 
 const link = () => {
-  const root = "./system";
+  const root = "./root";
   forEachInDirectory(root, root, (source, destination) => {
     if (path.dirname(destination) !== homePath("")) {
       makeDirectoryIfNotExists(path.dirname(destination));
     }
-    linkFile(source, destination);
+    // make a backup of the file
+    const backup = `${destination}.bak`;
+    fs.copyFileSync(destination, backup);
+    console.log(`Copied ${destination} to ${backup}`);
+
+    // delete the original
+    fs.unlinkSync(destination);
+  });
+
+  // spawn stow to link the files
+  const { spawnSync } = require("child_process");
+  const stow = spawnSync("stow", ["--target", homePath(""), "root"], {
+    stdio: "inherit",
   });
 };
 
@@ -76,8 +88,6 @@ const makeDirectoryIfNotExists = (dir) => {
 const linkFile = (source, destination) => {
   if (!fs.existsSync(destination)) {
     fs.symlinkSync(source, destination);
-  } else {
-    console.log(destination, ALREADY_EXISTS_WARNING);
   }
 };
 
