@@ -49,4 +49,6 @@ export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 # export PATH="$HOME/.cargo/bin:$PATH"
 source "$HOME/.cargo/env"
 
+# lvim, getnf, etc
+export PATH=~/.local/bin:$PATH
 
