@@ -7,19 +7,25 @@ const link = () => {
     if (path.dirname(destination) !== homePath("")) {
       makeDirectoryIfNotExists(path.dirname(destination));
     }
-    // make a backup of the file
-    const backup = `${destination}.bak`;
-    fs.copyFileSync(destination, backup);
-    console.log(`Copied ${destination} to ${backup}`);
 
-    // delete the original
-    fs.unlinkSync(destination);
+    // if the file exists
+    if (fs.existsSync(destination)) {
+      // make a backup of the file
+      const backup = `${destination}.bak`;
+      fs.copyFileSync(destination, backup);
+      console.log(`Created backup of ${destination} as ${backup}`);
+
+      // delete the original
+      fs.unlinkSync(destination);
+    }
   });
 
   // spawn stow to link the files
+
+  console.log("Linking files using stow");
   const { spawnSync } = require("child_process");
-  const stow = spawnSync("stow", ["--target", homePath(""), "root"], {
-    stdio: "inherit",
+  const stow = spawnSync("stow", ["-vv", "--target", homePath(""), "root"], {
+    stdio: ["inherit", "inherit", "inherit"],
   });
 };
 
@@ -74,20 +80,9 @@ const homePath = (pathString) => {
   return path.join(process.env.HOME || process.env.USERPROFILE, pathString);
 };
 
-const ALREADY_EXISTS_WARNING =
-  "EEXIST: File already exists. Move target before running again";
-
 const makeDirectoryIfNotExists = (dir) => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
-  } else {
-    console.log(dir, ALREADY_EXISTS_WARNING);
-  }
-};
-
-const linkFile = (source, destination) => {
-  if (!fs.existsSync(destination)) {
-    fs.symlinkSync(source, destination);
   }
 };
 
