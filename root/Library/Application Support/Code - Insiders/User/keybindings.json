@@ -183,10 +183,6 @@
   {
     "key": "ctrl+e",
     "command": "workbench.view.explorer"
-  },
-  {
-    "key": "shift+ctrl+e",
-    "command": "-workbench.view.explorer"
   }
   // {
   //   "key": "r",
