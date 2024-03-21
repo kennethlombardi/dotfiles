@@ -1,4 +1,3 @@
-// Place your key bindings in this file to overwrite the defaults
 // Kenwashere
 [
   // {
@@ -33,6 +32,32 @@
   //   "command": "workbench.action.previousEditor",
   //   "when": "!terminalFocus"
   // },
+  {
+    // bind copilot chat sidebar toggle
+    "key": "shift+cmd+i",
+    "command": "workbench.action.chat.open",
+    "when": "hasChatProvider"
+  },
+  {
+    "key": "cmd+shift+i",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible && activeViewlet == 'github.copilot'"
+  },
+  {
+    // unbind quickchat toggle
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.quickchat.toggle",
+    "when": "hasChatProvider"
+  },
+  {
+    // unbind open native console
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.openNativeConsole"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.nothing"
+  },
   {
     "key": "ctrl+h",
     "command": "workbench.action.terminal.focusPreviousPane",
@@ -183,6 +208,40 @@
   {
     "key": "ctrl+e",
     "command": "workbench.view.explorer"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.action.marker.nextInFiles"
+  },
+  {
+    "key": "ctrl+shift+cmd+9",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+f8",
+    "command": "-editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+cmd+0",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
   }
   // {
   //   "key": "r",

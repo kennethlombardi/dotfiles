@@ -1,0 +1,95 @@
+# hyper is defined in yabai as               alt + shift + ctrl + cmd
+# meh is defined in community at large as as alt + shift + ctrl 
+#
+# ctrl + shift - h : yabai -m window --focus west
+# ctrl + shift - j : yabai -m window --focus south
+# ctrl + shift - k : yabai -m window --focus north
+# ctrl + shift - l : yabai -m window --focus east
+
+# keys and key combinations that require least movement and least complexity 
+# cmd 
+# cmd + shift
+# -----------
+# cmd + shift - a
+# cmd + shift - s ; vscode make new file from file
+# cmd + shift - d ; vscode debug and run
+# cmd + shift - f ; vscode find 
+# cmd + shift - v ; chrome paste and match style
+# cmd + shift - c ; alfred->NULL 
+# cmd + shift - x ; alfred->NULL
+# cmd + shift - w ; alfred->chrome focus
+# cmd + shift - g ; alfred->NULL 
+# cmd + shift - h ; vscode find and replace
+# cmd + shift - j ; chrome downloads 
+# cmd + shift - k ; vscode remove line 
+# cmd + shift - l ; 
+# cmd + shift - ; ; vscode focus on path
+# cmd + shift - '
+# cmd + shift - return
+# cmd + shift - u ; vscode focus on output
+# cmd + shift - i ; vscode inline chat
+# cmd + shift - o ; vscode symbol
+# cmd + shift - p ; vscode palette
+# cmd + shift - n ; vscode new window
+# cmd + shift - m ; vscode focus on problems
+# cmd + shift - , ; alfred-> search through chrome tabs
+# cmd + shift - . ; vscode focus on path
+
+# Rotate tree
+cmd + ctrl - r : yabai -m space --rotate 90
+
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
+# open qutebrowser
+
+cmd + shift - return : ~/Scripts/qtb.sh
+
+# open mpv
+
+# cmd - m : open -na /Applications/mpv.app $(pbpaste)
+
+# change window focus within space
+
+# alt + shift + ctrl - j : yabai -m window --focus south
+# alt + shift + ctrl - k : yabai -m window --focus north
+# alt + shift + ctrl - h : yabai -m window --focus west
+# alt + shift + ctrl - l : yabai -m window --focus east
+#
+ctrl + cmd - h : yabai -m window --focus west
+ctrl + cmd - j : yabai -m window --focus south
+ctrl + cmd - k : yabai -m window --focus north
+ctrl + cmd - l : yabai -m window --focus east
+ctrl + cmd - return : yabai -m window --toggle zoom-fullscreen
+# resize window equally left and right 
+ctrl + cmd - i : yabai -m window --resize left:50:0; yabai -m window --resize right:-50:0
+ctrl + cmd - o : yabai -m window --resize right:50:0; yabai -m window --resize left:-50:0
+
+
+# toggle float
+
+ctrl + cmd - space : yabai -m window --toggle float
+
+# warp cardinal directions 
+
+hyper - h : yabai -m window --warp west
+hyper - j : yabai -m window --warp south
+hyper - k : yabai -m window --warp north
+hyper - l : yabai -m window --warp east
+
+
+# move window to prev and next space
+
+ctrl + cmd - p : yabai -m window --space prev;
+ctrl + cmd - n : yabai -m window --space next;
+ctrl + cmd - 1 : yabai -m window --space 1;
+ctrl + cmd - 2 : yabai -m window --space 2;
+ctrl + cmd - 3 : yabai -m window --space 3;
+
+# full size current focused window
+
+hyper - return : yabai -m window --toggle zoom-fullscreen
+
+hyper - i : yabai -m query --windows --window | jq -re 'if .app == "iTerm2" then .id else empty end' | xargs -I{} yabai -m window {} --insert east
+
+# insert a new chrome window to the right of current window
+hyper - o : yabai -m query --windows --window | jq -re 'if .app == "Google Chrome" then .id else empty end' | xargs -I{} yabai -m window {} --insert east

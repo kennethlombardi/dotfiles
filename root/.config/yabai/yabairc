@@ -23,23 +23,42 @@ yabai -m config                                 \
     window_animation_frame_rate  120            \
     window_opacity_duration      0.0            \
     active_window_opacity        1.0            \
-    normal_window_opacity        0.90           \
-    window_opacity               off            \
+    normal_window_opacity        0.50           \
+    window_opacity               on            \
     insert_feedback_color        0xffd75f5f     \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  12             \
-    bottom_padding               12             \
-    left_padding                 12             \
-    right_padding                12             \
+    top_padding                  10             \
+    bottom_padding               10             \
+    left_padding                 10             \
+    right_padding                10             \
     window_gap                   06             \
-    layout                       stack          \
     mouse_modifier               fn             \
     mouse_action1                move           \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
+# Set split ratio to approximate the golden ratio
+yabai -m config split_ratio 0.618
+
+yabai -m config layout bsp 
+yabai -m config mouse_follows_focus on
+yabai -m config mouse_modifier alt
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+# use yabai to get all windows and then display them as a list in alfred
+# yabai -m query --windows --window | jq -re 'if .app == "iTerm2" then .id else empty end' | xargs -I{} yabai -m window {} --insert east
+
 borders active_color=0xffff0000 inactive_color=0xff494d64 width=12.0 2>/dev/null 1>&2 &
 
 echo "yabai configuration loaded.."
+
+# direction=$1
+# /usr/local/bin/yabai -m window --focus $direction
+
+# make sticky
+# yabai -m window --toggle sticky
+
+yabai -m config window_float 1
