@@ -39,20 +39,16 @@ function forEachInDirectory(rootPath, currentEntryPath, callback) {
 
   directory.forEach((entry) => {
     if (entry.isFile()) {
-      const originalPath = replaceUnderscoreWithDot(currentEntryPath);
       const oldPart = rootPath;
       const newPart = homePath("");
-      const replaced = replacePath(originalPath, oldPart, newPart);
-      const wholePath = path.join(
-        replaced,
-        replaceUnderscoreWithDot(entry.name)
-      );
-      callback(path.join(path.resolve(entry.path), entry.name), wholePath);
+      const replaced = replacePath(currentEntryPath, oldPart, newPart);
+      const wholePath = path.join(replaced, entry.name);
+      callback(path.join(path.resolve(currentEntryPath), entry.name), wholePath);
     }
 
     if (entry.isDirectory()) {
-      const path = `${entry.path}/${entry.name}`;
-      forEachInDirectory(rootPath, path, callback);
+      const entryPath = path.join(currentEntryPath, entry.name);
+      forEachInDirectory(rootPath, entryPath, callback);
     }
   });
 }
@@ -70,11 +66,7 @@ function replacePath(originalPath, oldPart, newPart) {
   return newPath;
 }
 
-const replaceUnderscoreWithDot = (pathString) => {
-  return path.join(
-    ...pathString.split(path.sep).map((s) => s.replace(/^_/, "."))
-  );
-};
+
 
 const homePath = (pathString) => {
   return path.join(process.env.HOME || process.env.USERPROFILE, pathString);

@@ -1,0 +1,68 @@
+{
+  "workbench.colorTheme": "Monokai Dimmed",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "volar.format.initialIndent": {
+    "html": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[plaintext]": {
+    "editor.inlineSuggest.enabled": false,
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.wordBasedSuggestions": "off"
+  },
+  "editor.minimap.enabled": false,
+  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
+  "html.format.wrapLineLength": 80,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.snippetSuggestions": "top",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.statusLineSeparator": "",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
+  "editor.rulers": [80],
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#ff0000"
+  },
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.fontFamily": "monospace",
+  "vscode-neovim.neovimClean": true,
+  "vscode-neovim.logLevel": "debug",
+  "editor.formatOnPaste": true,
+  "npm.packageManager": "npm",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.inlineSuggest.showToolbar": "always",
+  "remote.SSH.remotePlatform": {
+    "*.gitpod.io": "linux"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "explorer.autoReveal": true,
+  "editor.formatOnSave": true,
+  "git.blame.editorDecoration.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "github.copilot.selectedCompletionModel": "",
+  "workbench.editor.wrapTabs": true,
+  "workbench.preferredHighContrastColorTheme": "Monokai",
+  "git.enableSmartCommit": true,
+  "terminal.integrated.shellIntegration.enabled": false
+}
